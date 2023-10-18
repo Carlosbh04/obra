@@ -1042,7 +1042,7 @@ footer a:hover {
    
         text-align: center;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
        
     }
   
@@ -1052,7 +1052,7 @@ footer a:hover {
     }
 
     .proyecto{
-        width: 70%;
+        width: 90%;
         border-radius: 1rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  
         height: 46vh;
@@ -1071,7 +1071,7 @@ footer a:hover {
     .proyecto p{
         font-size: 1rem;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-     margin-top: auto; 
+        margin-top: auto; 
     }
     .antes-despues{
        
