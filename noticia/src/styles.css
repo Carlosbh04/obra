@@ -802,9 +802,9 @@ button.detailsButton {
          
        }
        #obras .obra{
-          height: auto;
+           height: auto;
            width: 70%;
-           background-color: #007bff;
+       
             
         }
    
@@ -815,7 +815,7 @@ button.detailsButton {
                justify-content: center;
                align-items: center;
                gap: 3rem;
-               background-color: #007bff;
+
                margin: auto;
                
              
