@@ -533,7 +533,7 @@ button.detailsButton {
        #obras .obra{
            height: auto;
            width: 80%;
-           background-color: #007bff;
+          
             
         }
    
@@ -543,7 +543,7 @@ button.detailsButton {
                flex-direction: column;
                justify-content: center;
                align-items: center;
-               background-color: #007bff;
+             
                margin: auto;
                
              
@@ -666,7 +666,7 @@ button.detailsButton {
        #obras .obra{
            height: auto;
            width: 80%;
-           background-color: #007bff;
+        
             
         }
    
@@ -676,7 +676,6 @@ button.detailsButton {
                flex-direction: column;
                justify-content: center;
                align-items: center;
-               background-color: #007bff;
                margin: auto;
                
              
@@ -815,7 +814,6 @@ button.detailsButton {
                justify-content: center;
                align-items: center;
                gap: 3rem;
-
                margin: auto;
                
              
