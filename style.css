@@ -138,6 +138,7 @@ nav{
     display: flex;
     justify-content: flex-end; /* Alinea los enlaces hacia la derecha */
     align-items: center;
+    
   
 }
 
@@ -147,12 +148,12 @@ nav{
     margin: 0;
     display: flex;
     gap: 70px; /* Agrega espacio entre los enlaces */
+  
 }
-
 
 .menu a {
     text-decoration: none;
-    color: #fff;
+    color: #fcf5f5;
     font-size: 16px;
     position: relative;
     font-weight: bold; /* Opcional: añade negrita a los enlaces */
@@ -376,6 +377,16 @@ nav{
     padding: 50px;
     margin: 20px;
 
+    width: 100%; /* Asegura que ocupe el ancho completo de la pantalla */
+    height: auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./img/despues.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Color del texto en contraste con el fondo */
+    padding: 40px; /* Espaciado interior para contenido */
+    text-align: center;
+
 }
 
 footer {
@@ -442,6 +453,12 @@ footer {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 40px;
     margin-top: 120px;
+    text-align: center;
+    color: #f5f0f0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 6px rgba(230, 224, 224, 0.5);
 }
 
 .text1{
@@ -469,6 +486,8 @@ footer {
 
 
 
+
+
 .info{
     display: flex;
     justify-content: center;
@@ -486,12 +505,67 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 23%;
+    width: 20%;
     height: 50vh;
     position: relative;
-    background-color: #d3d9e3;
-    margin-top: 100px;
+    background: linear-gradient(to bottom, #dceff6, #212f28);
+    color: white;
+
+    /* Añade una sombra suave para resaltar la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* Agrega bordes redondeados */
+    border-radius: 10px;
+
+    /* Transición suave para efectos hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Estilo para el botón "Ver más" */
+    .ver-mas {
+        background: #6ab04c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+  
 }
+
+/* Estilo base del botón */
+.proyecto .ver-mas {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 60px;
+}
+/* Estilo al pasar el mouse sobre el botón */
+.proyecto .ver-mas:hover {
+    background-color: #2980b9;
+    transform: scale(1.1); /* Escala el botón un 10% más grande */
+}
+
+
+/* Estilo para el botón "Ver más" cuando se pasa el ratón */
+.proyecto:hover .ver-mas {
+    transform: translateY(5px); /* Mueve el botón hacia abajo al pasar el ratón */
+}
+
+.ver-mas:hover {
+    background: #558e3a;
+    transform: scale(1.05); /* Escala el botón al pasar el ratón */
+}
+
+
+
+
 
 /* Agrega un contenedor para el efecto de superposición */
 .antes-despues {
@@ -518,11 +592,15 @@ footer {
 .proyecto h3 {
     z-index: 1;
     margin-top: 10px;
+    color: #eeeef6;
+    text-shadow: 3px 3px 6px rgba(26, 23, 23, 0.5);
 }
 
 /* Ajusta la descripción para que esté por encima de las imágenes superpuestas */
 .proyecto p {
     z-index: 1;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(26, 23, 23, 0.5);
 }
 
 .antes-despues .antes {
@@ -560,27 +638,6 @@ footer {
     scroll-behavior: initial;
 }
 
-
-
-
-
-/* Estilo base del botón */
-.proyecto .ver-mas {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-top: 60px;
-}
-/* Estilo al pasar el mouse sobre el botón */
-.proyecto .ver-mas:hover {
-    background-color: #2980b9;
-    transform: scale(1.1); /* Escala el botón un 10% más grande */
-}
 
 
 
@@ -636,6 +693,7 @@ footer {
     max-width: 100%;
     height: auto;
     margin-bottom: 60px;
+    margin-left: 20px;
 }
 
 /* Estilos generales del formulario */
@@ -643,18 +701,19 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: #f2f2f2;
+    min-height: 90vh;
+    background: #f0eeee;
+
 }
 
 .contact-form {
-    width: 100%;
+    width: 60%;
     max-width: 400px;
     text-align: center;
-    background: #fff;
+    background: #f8efef;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .contact-form h2 {
@@ -706,7 +765,7 @@ footer {
 
 /* Estilo para el botón de enviar */
 .form-group input[type="submit"] {
-    background: #333;
+    background: #605f5f;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -735,151 +794,6 @@ button[type="submit"]:hover {
     color:black;
 }
 
-.scrollable {
-    max-height: 100px; /* Altura máxima antes de la barra de desplazamiento */
-    overflow-y: auto; /* Habilitar la barra de desplazamiento si es necesario */
-    white-space: normal; /* Permitir saltos de línea dentro del textarea */
-}
-
-
-.confirmation-message {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    padding: 12px;
-    z-index: 999;
-    text-align: center;
-    max-width: 400px;
-    overflow-y: auto; /* Hacer que el cuadro sea desplazable si el contenido es demasiado largo */
-}
-
-
-#confirmation-data {
-    max-width:100%;
-    margin: 0;
-    text-align: left; /* Alinea el texto hacia la izquierda */
-    /* background-color: #0a74e5; */
-    display: flex;
-    flex-direction: column; /* Alinea los elementos en una columna */
-    align-items: flex-start; /* Alinea los elementos en la parte superior */
-    justify-content: center; /* Centra verticalmente los elementos en la columna */
-}
-
-.confirmation-message p {
-    font-size: 2em;
-    margin-bottom: 50px;
-    margin-top: 10px;
-    color: #0a9f3e;
-    /* background-color: #069d10; */
-    display: inline-block;
-    font-family:cursive; /* Cambia la fuente */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra al texto */
-}
-
-
-#confirmation-data li {
-    display: flex;
-    margin-bottom: 10px;
-    align-items: flex-start;
-    width: 100%;
-}
-
-
-
-#confirmation-data li strong {
-    width: 80px; /* Ancho fijo para los títulos (NOMBRE, CORREO, MENSAJE) */
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 18px;
-    /* background-color: gray; */
-    display: flex;
-    justify-content: flex-start; /* Alinea a la izquierda */
-    align-items: center;
-    padding: 10px;
-    margin-left: 0px;
-    margin-top: 4px;
-  
-}
-
-#confirmation-data li span {
-    color: #555;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-left: 10px;
-    margin-top: 5px;
-    padding: 10px;
-    display: block;
-    white-space: normal;
-    overflow: hidden;
-    max-height: 100px; /* Altura máxima inicial antes de que aparezca la barra de desplazamiento */
-    /* background-color: yellow; */
-    overflow-y: auto;
-}
-
-#confirmation-data li span.scrollable {
-    overflow-y: auto; /* Habilitar la barra de desplazamiento si es necesario */
-    transition: max-height 0.5s;
-    max-height: 1000px; /* Altura máxima cuando se activa la barra de desplazamiento */
-}
-
-
-
-
-#confirmation-data li span.scrollable {
-    max-height: 1000px; /* Ajusta la altura máxima a un valor grande para mostrar todo el contenido */
-  
-}
-
-
-
-#confirm-yes{
-    background: #069d10;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    margin: 0 10px;
-    transition: background-color 0.3s, color 0.3s; /* Transición para un cambio suave */
-
-    /* Agrega un estilo de hover */
-}
-
-#confirm-yes:hover {
-    background: #1f7bd7; /* Cambia el color de fondo al pasar el cursor sobre el botón */
-    color: #0a0606; /* Cambia el color del texto al pasar el cursor sobre el botón */
-}
-
-#confirm-no{
-    background: #cdd0ce;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    margin: 0 10px;
-    margin-top: 30px;
-    transition: background-color 0.3s, color 0.3s; /* Transición para un cambio suave */
-
-}
-
-
-
-#confirm-no:hover {
-    background: #a01111; /* Cambia el color de fondo al pasar el cursor sobre el botón */
-    color: #0a0606; /* Cambia el color del texto al pasar el cursor sobre el botón */
-}
-
-
-
 
 
 
@@ -907,8 +821,23 @@ footer a:hover {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Estilos para dispositivos móviles */
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
     .menu-toggle {
         position: fixed;
         right: 10px ; /* Alinea el ícono en el lado derecho */
@@ -1034,36 +963,65 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        /* Reduzco el margen superior para evitar que se salga de la vista */
+      
         width: 100%; /* Asegura que ocupe el ancho completo de la pantalla */
         height: auto;
-    }
-    .text h2{
-   
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./img/despues.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white; /* Color del texto en contraste con el fondo */
+        padding: 40px; /* Espaciado interior para contenido */
         text-align: center;
-        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.3rem;
-       
+    
     }
+    .text h2 {
+        text-align: center;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 1.7rem;
+        margin-top: 2rem;
+        color: #f5f0f0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        text-shadow: 4px 4px 6px rgba(230, 224, 224, 0.5); /* Sombra fija en el texto */
+       
+        /* transition: text-shadow 0.3s, filter 0.3s; Agrega una transición para los efectos  */
+    }
+    
+    
+     /* .text h2:hover {
+         text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); Cambia la sombra al pasar el mouse 
+         filter: blur(2px); Agrega un efecto de desenfoque al pasar el mouse 
+    } */
+    
+     
   
     .fila-proyectos{
-        flex-direction: column;
+        flex-direction:column;
         align-items: center;
     }
 
     .proyecto{
-        width: 90%;
+        width: auto;
         border-radius: 1rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  
         height: 46vh;
+        background: linear-gradient(to bottom, #dceff6, #212f28);
+       
+        
       
     
     }
+
+   
   
     .proyecto h3{
         font-size: 1.3rem;
         font-family: Georgia, 'Times New Roman', Times, serif;
         margin-top: auto;
+        color: #f3f3fb;
+        text-shadow: 3px 3px 6px rgba(26, 23, 23, 0.5);
        
       
         
@@ -1072,18 +1030,26 @@ footer a:hover {
         font-size: 1rem;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         margin-top: auto; 
+        color: #eeeef6;
+        text-shadow: 3px 3px 6px rgba(26, 23, 23, 0.5);
     }
     .antes-despues{
        
         width: 100%;
-        height: 20vh;
+        
         
 
     
     }
     #acerca h2{
-      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      font-size: 2rem;
+        text-align: center;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 1.8rem;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+         margin-top: 4rem;
+        text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); /* Sombra fija en el texto */
     }
     #acerca p{
         color: #333;
@@ -1092,13 +1058,23 @@ footer a:hover {
     .proyecto .ver-mas{
         margin-top: auto;
     }
+   
 
+}
+
+
+@media screen and (min-width:730px) and (max-width:1200px) {
+    .fila-proyectos{
+        flex-direction: row;
+        
+    }
+    
 }
 
 
 
 /* Estilos para pantallas más grandes (mayor a 768px) */
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .menu-toggle {
         display: none; /* Oculta el icono de las tres barras en pantallas más grandes */
     }
@@ -1108,7 +1084,7 @@ footer a:hover {
     }
 }
 
-@media screen and (max-width:767px){
+@media screen and (max-width:1200px){
     .top-header{
         display: none;
     }
@@ -1116,7 +1092,7 @@ footer a:hover {
 }
 
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1200px) {
     .custom-heading {
         font-size: 20px !important; /* Añade !important para asegurar que la regla se aplique */
     }
@@ -1125,7 +1101,7 @@ footer a:hover {
 
 
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 2080px) {
     .antes-despues {
         width: 100%;
       
@@ -1161,14 +1137,24 @@ footer a:hover {
         }
     }
 
+    @media screen and (min-width:270px) and (max-width:280px ) {
+        .proyecto{
+           background-image: linear-gradient(to left, rgb(251, 248, 247), rgb(122, 222, 244));
+         
+           width: 100%;
+       }
+      
+        .text h2{
+         
+            margin-top: 1rem;
+        }
+        #acerca h2{
+            margin-top: 1.8rem;
+        }
 
-    @media (max-width: 768px) {
-        .confirmation-message {
-            max-width: 90%; /* Reducir el ancho de la caja de confirmación */
-            
+        .contact-form{
+            width: auto;
         }
-    
-        #confirmation-data li span.scrollable {
-            max-height: 500px; /* Ajustar la altura máxima para dispositivos móviles */
-        }
-    }
+       }
+
+       

@@ -97,12 +97,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Manejo de formulario y mensaje de confirmación
-const form = document.getElementById("miFormulario");
+const form1 = document.getElementById("miFormulario");
 const confirmation = document.getElementById("confirmation");
 const messageInput = document.getElementById("message");
 
-if (form && confirmation) {
-    form.addEventListener("submit", function (event) {
+if (form1 && confirmation) {
+    form1.addEventListener("submit", function (event) {
         event.preventDefault();
 
         const nameValue = document.getElementById("name").value;
@@ -154,3 +154,50 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("miFormulario");
+    const submitButton = document.getElementById("submit-button");
+  
+    submitButton.addEventListener("click", function (event) {
+      event.preventDefault(); // Evita el envío predeterminado del formulario
+  
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+  
+      if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+        alert("Por favor, complete todos los campos.");
+        return;
+      }
+  
+      const formData = {
+        name: name,
+        email: email,
+        message: message,
+      };
+  
+      fetch("http://127.0.0.1:3000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          console.log(data);
+          alert("Formulario enviado con éxito");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Error al enviar el formulario");
+        });
+    });
+  });
+  
+  

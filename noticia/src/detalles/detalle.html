@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles de la Obra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+   
+    <main>
+        <div class="obra-details">
+            <h2 id="detailTitle"></h2>
+            <img id="detailImage" alt="">
+            <p id="detailDescription"></p>
+            <p id="detalles"></p>
+            <p id="detallesAvanzados"></p>
+            <a href="../index.html">Volver a la lista de obras</a>
+        </div>
+    </main>
+
+    <!-- Agregar esta sección a tu HTML -->
+    <div id="imageModal" class="modal">
+        <span class="close" id="closeButton">&times;</span>
+        <div class="modal-content-container">
+            <button id="zoomInButton"><i class="fas fa-search-plus"></i></button>
+            <img class="modal-content" id="popupImage">
+            <button id="zoomOutButton"><i class="fas fa-search-minus"></i></button>
+        </div>
+    </div>
+    
+
+    <script src="detalles.js"></script>
+</body>
+</html>

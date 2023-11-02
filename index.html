@@ -57,6 +57,9 @@
                     <li><a href="#proyectos" class="menu-link">Proyectos</a></li>
                     <li><a href="#acerca" class="menu-link">Quienes Somos</a></li>
                     <li><a href="#contacto" class="menu-link">Contacto</a></li>
+                    <li><a href="/noticia/src/index.html" class="menu-link">Noticias</a></li>
+
+
                     <div class="line"></div> <!-- Línea separadora -->
                 </ul>
                 <!-- Pie del menú -->
@@ -69,7 +72,7 @@
 
     <!-- Botón flotante de WhatsApp -->
     <div class="whatsapp-float">
-        <a href="https://api.whatsapp.com/send?phone=641319474&text=Chatea%20con%20Nova" target="_blank" title="WhatsApp de Nova">
+        <a href="https://api.whatsapp.com/send?phone=645355235&text=Chatea%20con%20Nova" target="_blank" title="WhatsApp de Nova">
             <img src="/img/whatsapp.png" alt="WhatsApp">
         </a>
     </div>
@@ -89,6 +92,8 @@
             </div>
         </div>
     </section>
+
+ 
 
     <!-- Sección de Proyectos Recientes -->
     <section class="text" id="proyectos">
@@ -170,9 +175,6 @@
         <p>Nuestra misión es superar las expectativas de nuestros clientes en cada proyecto que emprendemos. Nos esforzamos por brindar soluciones de construcción innovadoras y sostenibles, respaldadas por la experiencia de nuestro equipo de profesionales altamente capacitados y comprometidos.</p>
         <p>En [Nombre de la Compañía], creemos en los valores fundamentales de la integridad, la excelencia y el compromiso. Estos valores guían todas nuestras acciones y decisiones, y son la base de las relaciones de confianza que hemos construido con nuestros clientes, proveedores y colaboradores a lo largo de los años.</p>
         <p>Nuestro equipo multidisciplinario está formado por arquitectos, ingenieros, contratistas y especialistas en obra civil que trabajan en conjunto para ofrecer soluciones integrales y personalizadas a cada cliente. Desde la planificación inicial hasta la entrega del proyecto, nos esforzamos por garantizar la calidad, el cumplimiento de los plazos y la seguridad en todas las fases de construcción.</p>
-        <p>En [Nombre de la Compañía], también estamos comprometidos con la sostenibilidad y la responsabilidad ambiental. Buscamos continuamente formas de minimizar el impacto ambiental de nuestros proyectos y promovemos prácticas de construcción sostenibles en todas nuestras obras.</p>
-        <p>Nuestra visión es seguir siendo líderes en el sector de la construcción, expandir nuestro alcance geográfico y continuar brindando soluciones de vanguardia a nuestros clientes.</p>
-        <p>Si está buscando un socio de confianza en el mundo de la construcción y la obra civil, [Nombre de la Compañía de Construcción] está aquí para usted. Contáctenos para discutir su próximo proyecto y descubra cómo podemos hacer que sus visiones se conviertan en realidad.</p>
     </section>
 
     <!-- Sección de Contacto con un formulario y mensaje de confirmación -->
@@ -180,42 +182,26 @@
         <div class="contact-form">
             <h2>Contacto</h2>
             <!-- Formulario de contacto -->
-            <form id="miFormulario">
+            <form id="miFormulario" action="/send-email" method="POST" enctype="application/x-www-form-urlencoded">
                 <div class="form-group">
-                    <i class="fa fa-user icon"></i>
-                    <input type="text" id="name" required placeholder="Nombre">
+                  <i class="fa fa-user icon"></i>
+                  <input type="text" name="name" id="name" required placeholder="Nombre">
                 </div>
                 <div class="form-group">
-                    <i class="fa fa-envelope icon"></i>
-                    <input type="email" id="email" required placeholder="Correo Electrónico">
+                  <i class="fa fa-envelope icon"></i>
+                  <input type="email" name="email" id="email" required placeholder="Correo Electrónico">
                 </div>
                 <div class="form-group">
-                    <i class="fa fa-comment icon1"></i>
-                    <textarea id="message" rows="4" required placeholder="Mensaje"></textarea>
+                  <i class="fa fa-comment icon1"></i>
+                  <textarea name="message" id="message" rows="4" required placeholder="Mensaje"></textarea>
                 </div>
                 <div class="form-group">
-                    <button type="submit">Enviar</button>
+                  <button type="submit" id="submit-button">Enviar</button>
                 </div>
-            </form>
-        </div>
-        <!-- Mensaje de confirmación después de enviar el formulario -->
-        <div class="confirmation-message" id="confirmation">
-            <p>¿Son correctos estos datos?</p>
-            <ul id="confirmation-data">
-                <li>
-                    <strong>Nombre:</strong> <span id="name-value"></span>
-                </li>
-                <li>
-                    <strong>Correo:</strong> <span id="email-value"></span>
-                </li>
-                <li>
-                    <strong>Mensaje:</strong> <span id="message-value" class="mensaje-item"></span>
-                </li>
-            </ul>
-            <button id="confirm-yes">Continuar</button>
-            <button id="confirm-no">Cancelar</button>
-        </div>
+              </form>
+            
     </section>
+
 
     <!-- Pie de página -->
     <footer>

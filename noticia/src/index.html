@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Enlaces a archivos CSS y fuentes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Noticias de Obras Nuevas</title>
+</head>
+<body>
+    <header> 
+        <h1 ><a class="titulo" href="/index.html#inicio">Nova Carlaria</a></h1>
+      </header>
+
+      <h2 id="eventosNoticias">Eventos y Noticias</h2> <!-- Agrega el h2 aquí -->
+
+   <main>
+    <div class="search">
+        
+        <div class="search-input-container">
+            <div class="search-icon"><i class="fas fa-search"></i></div>
+            <input type="text" id="searchInput" placeholder="Buscar noticias...">
+        </div>
+        <div id="resultadosContainer"></div>
+        <div id="noResultMessage"></div>
+    </div>
+    
+    <section id="obras">
+        <!-- Aquí se cargarán las noticias de obras nuevas -->
+    </section>  
+    <div id="pagination"></div>
+</main>
+
+        
+  <section id="obras">
+            <!-- Aquí se cargarán las noticias de obras nuevas -->
+        </section>
+        <div id="pagination"></div>
+   </main>
+
+    <div id="newsDetails" class="hidden">
+        <h2 id="detailTitle"></h2>
+        <img id="detailImage" alt="">
+        <p id="detailDescription"></p>
+        <button class="detailsButton" data-index="${obra.id}">Ver Detalles</button>
+    </div>
+
+  
+
+    <script src="script.js"></script>
+</body>
+</html>
