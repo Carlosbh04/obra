@@ -264,7 +264,13 @@ button.detailsButton {
 
 
 
-@media screen and (min-width:768px ) and (max-width:1200px) {
+
+
+
+
+
+
+@media screen and (max-width:1200px) {
 
    body {
 
@@ -290,9 +296,11 @@ button.detailsButton {
         text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
     }
 
-    /* section#obras{
-       
-    } */
+     section#obras{
+        height: auto;
+        justify-content: space-around;
+        margin-top: 1rem;
+    } 
     #obras .obra{
        height: auto;
         
@@ -317,14 +325,12 @@ button.detailsButton {
 
     .search {
         height: auto;
-        width: 50%; /* Ocupa todo el ancho disponible */
-      
-        margin-bottom: 1rem;
+        width: 90%; /* Ocupa todo el ancho disponible */
         display: flex;
         justify-content:center; /* Espacio entre los elementos */
         align-items:center; /* Alinea verticalmente al centro */
         padding: 0 20px; /* Agrega relleno a los lados para espacio entre el borde y los elementos */
-        
+        margin: 0;
     }
     
     .search-input-container {
@@ -333,7 +339,7 @@ button.detailsButton {
         position: relative;
       
         justify-content: center;
-        margin-right: 5rem;
+    
       
      
     }
@@ -375,12 +381,15 @@ button.detailsButton {
 }
 
 
-@media screen and (min-width:280px) and (max-width:340px) {
+
+/* medidas para celurares y tablet */
+
+@media screen and (min-width:280px) and (max-width:320px) {
 
   
 
     header{
-     height: auto;
+     height: 3vh;
      padding-left: 1rem;
     
     }
@@ -389,9 +398,9 @@ button.detailsButton {
         
     }
     #eventosNoticias{
-        height: 0.6rem;
+        height: 0.1rem;
 
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-family: 'Courier New', Courier, monospace;
         text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
         text-align: center;
@@ -399,12 +408,12 @@ button.detailsButton {
     }
     #obras .obra{
         height: auto;
-        width: auto;
+        width: 12.5rem;
          
      }
 
      section#obras{
-        
+           
             height: auto;
             flex-direction: column;
             justify-content: center;
@@ -436,6 +445,7 @@ button.detailsButton {
         margin-left: 0;
         justify-content:center; /* Espacio entre los elementos */
         align-items:center; /* Alinea verticalmente al centro */
+     
     
         
     }
@@ -445,7 +455,7 @@ button.detailsButton {
         align-items: center;
         position: relative;
         justify-content: center;
-     
+        margin-right: 0;
       
      
     }
@@ -510,143 +520,15 @@ button.detailsButton {
     
 }
 
-@media screen and (min-width:341px) and (max-width:359px) {
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    /* Estilos para teléfonos móviles en modo retrato */
 
-    header{
-        height: auto;
-        padding-left: 1rem;
-       
-       }
-       .titulo{
-           font-size: 1.3rem;
-           
-       }
-       #eventosNoticias{
-           height: 0.6rem;
-   
-           font-size: 1.2rem;
-           font-family: 'Courier New', Courier, monospace;
-           text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
-           text-align: center;
-         
-       }
-       #obras .obra{
-           height: auto;
-           width: 80%;
-          
-            
-        }
-   
-        section#obras{
-               width: 70%;
-               height: auto;
-               flex-direction: column;
-               justify-content: center;
-               align-items: center;
-             
-               margin: auto;
-               
-             
-       } 
-       h2{
-           font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-           font-size: 1.3rem;
-           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-         
-       }
-       img{
-           border-radius: 1rem;
-       }
-       p{
-          font-size: 1.3rem;
-          
-       }
-       #pagination{
-           margin-top: 2rem;
-       }
-   
-       .search {
-           height: auto;
-           width: auto; /* Ocupa todo el ancho disponible */
-           margin-bottom: 2rem;
-           margin-left: 0;
-           justify-content:center; /* Espacio entre los elementos */
-           align-items:center; /* Alinea verticalmente al centro */
-       
-           
-       }
-       
-       .search-input-container {
-           justify-content: center;
-           align-items: center;
-           position: relative;
-           justify-content: center;
-        
-         
-        
-       }
-       
-       .search-icon {
-           position: absolute;
-           left: 10px; /* Ajusta la posición del ícono horizontalmente */
-           color: #555; /* Color del ícono */
-           pointer-events: none; /* Evita que el ícono sea clickeable */
-         
-       }
-       
-       #searchInput {
-           padding-left:2rem ; /* Ajusta el espaciado a tu preferencia */
-           width: auto;
-           
-         
-       }
-       .fecha-publicacion {
-           color: black;
-           margin-bottom: 1rem;
-           opacity: 0; /* Establece la opacidad en 0 para ocultar la fecha inicialmente */
-           transform: translateY(20px); /* Mueve la fecha hacia abajo */
-           animation: aparecer 1s forwards; /* Agrega una animación para el efecto */
-           transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Efecto de transición */
-       }
-       
-       /* Definir la animación "aparecer" */
-       @keyframes aparecer {
-           0% {
-               opacity: 0;
-               transform: translateY(20px);
-           }
-           100% {
-               opacity: 1;
-               transform: translateY(0);
-           }
-       }
-   
-       button.detailsButton {
-           width: auto;
-           left: 0;
-           position: relative;
-           background-image: linear-gradient(to left, rgb(98, 98, 83) , rgb(72, 71, 71));
-           color: #fcf3f3;
-           padding: 10px 20px;
-           border: none;
-           border-radius: 5px;
-           cursor: pointer;
-           transform: scale(1);
-           transition: background-color 0.3s ease, transform 0.3s ease;
-       }
-       
-       button.detailsButton:hover {
-           background-image: linear-gradient(to left, rgb(162, 237, 162) , rgb(237, 145, 145));
-            color: white;
-           transform: scale(1.1); /* Aplica un efecto de escalado al botón */
-       }
-    
-    
+   body{
+    margin: 0;
+    padding: 0;
 }
-
-@media screen and (min-width:360px) and (max-width:505px) {
     header{
-        height: auto;
+        height: 3vh;
         padding-left: 1rem;
        
        }
@@ -655,9 +537,9 @@ button.detailsButton {
            
        }
        #eventosNoticias{
-           height: 0.6rem;
+           height: 0.2rem;
    
-           font-size: 1.2rem;
+           font-size: 1rem;
            font-family: 'Courier New', Courier, monospace;
            text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
            text-align: center;
@@ -665,18 +547,22 @@ button.detailsButton {
        }
        #obras .obra{
            height: auto;
-           width: 80%;
-        
+           width:14.3rem;
+
+         
+           
             
         }
    
         section#obras{
-               width: 70%;
+            
                height: auto;
                flex-direction: column;
                justify-content: center;
                align-items: center;
-               margin: auto;
+               max-width: 100%;
+             
+               
                
              
        } 
@@ -705,7 +591,7 @@ button.detailsButton {
            justify-content:center; /* Espacio entre los elementos */
            align-items:center; /* Alinea verticalmente al centro */
        
-           
+          
        }
        
        .search-input-container {
@@ -713,6 +599,7 @@ button.detailsButton {
            align-items: center;
            position: relative;
            justify-content: center;
+           margin-right: 0;
         
          
         
@@ -772,143 +659,445 @@ button.detailsButton {
             color: white;
            transform: scale(1.1); /* Aplica un efecto de escalado al botón */
        }
-    
 }
 
 
 
 
+ /* Estilos para teléfonos móviles en modo paisaje */
+@media screen and (min-width: 481px) and (max-width: 590px) {
 
-
-@media  screen and (min-width:506px) and (max-width:680px) {
-
-    header{
-        height: auto;
-        padding-left: 1rem;
-       
-       }
-       .titulo{
-           font-size: 1.3rem;
+    body{
+        margin: o;
+        padding: 0;
+      
+    }
+        header{
+            height: 3vh;
+            padding-left: 1rem;
            
-       }
-       #eventosNoticias{
-           height: 0.6rem;
-   
-           font-size: 1.2rem;
-           font-family: 'Courier New', Courier, monospace;
-           text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
-           text-align: center;
-         
-       }
-       #obras .obra{
-           height: auto;
-           width: 70%;
+           }
+           .titulo{
+               font-size: 1.3rem;
+               
+           }
+           #eventosNoticias{
+               height: 0.2rem;
        
-            
-        }
-   
-        section#obras{
-               width: 60%;
+               font-size: 1rem;
+               font-family: 'Courier New', Courier, monospace;
+               text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
+               text-align: center;
+             
+           }
+           #obras .obra{
                height: auto;
-               flex-direction: row;
+               width:14.6rem;
+    
+             
+               
+                
+            }
+       
+            section#obras{
+                   
+                   height: auto;
+                   flex-direction: column;
+                   justify-content: center;
+                   align-items: center;
+                   width: 100%;
+                   gap:6px;
+                
+                   
+                 
+                   
+                   
+                 
+           } 
+           h2{
+               font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               font-size: 1.3rem;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+             
+           }
+           img{
+               border-radius: 1rem;
+           }
+           p{
+              font-size: 1.3rem;
+              
+           }
+           #pagination{
+               margin-top: 2rem;
+           }
+       
+           .search {
+               height: auto;
+               width: auto; /* Ocupa todo el ancho disponible */
+               margin-bottom: 2rem;
+               margin-left: 0;
+               justify-content:center; /* Espacio entre los elementos */
+               align-items:center; /* Alinea verticalmente al centro */
+           
+              
+           }
+           
+           .search-input-container {
                justify-content: center;
                align-items: center;
-               gap: 3rem;
-               margin: auto;
+               position: relative;
+               justify-content: center;
+               margin-right: 0;
+            
+             
+            
+           }
+           
+           .search-icon {
+               position: absolute;
+               left: 10px; /* Ajusta la posición del ícono horizontalmente */
+               color: #555; /* Color del ícono */
+               pointer-events: none; /* Evita que el ícono sea clickeable */
+             
+           }
+           
+           #searchInput {
+               padding-left:2rem ; /* Ajusta el espaciado a tu preferencia */
+               width: auto;
                
              
-       } 
-       h2{
-           font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-           font-size: 1.3rem;
-           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-         
-       }
-       img{
-           border-radius: 1rem;
-       }
-       p{
-          font-size: 1.3rem;
-          
-       }
-       #pagination{
-           margin-top: 2rem;
-       }
-   
-       .search {
-           height: auto;
-           width: auto; /* Ocupa todo el ancho disponible */
-           margin-bottom: 2rem;
-           margin-left: 0;
-           justify-content:center; /* Espacio entre los elementos */
-           align-items:center; /* Alinea verticalmente al centro */
-       
-           
-       }
-       
-       .search-input-container {
-           justify-content: center;
-           align-items: center;
-           position: relative;
-           justify-content: center;
-        
-         
-        
-       }
-       
-       .search-icon {
-           position: absolute;
-           left: 10px; /* Ajusta la posición del ícono horizontalmente */
-           color: #555; /* Color del ícono */
-           pointer-events: none; /* Evita que el ícono sea clickeable */
-         
-       }
-       
-       #searchInput {
-           padding-left:2rem ; /* Ajusta el espaciado a tu preferencia */
-           width: auto;
-           
-         
-       }
-       .fecha-publicacion {
-           color: black;
-           margin-bottom: 1rem;
-           opacity: 0; /* Establece la opacidad en 0 para ocultar la fecha inicialmente */
-           transform: translateY(20px); /* Mueve la fecha hacia abajo */
-           animation: aparecer 1s forwards; /* Agrega una animación para el efecto */
-           transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Efecto de transición */
-       }
-       
-       /* Definir la animación "aparecer" */
-       @keyframes aparecer {
-           0% {
-               opacity: 0;
-               transform: translateY(20px);
            }
-           100% {
-               opacity: 1;
-               transform: translateY(0);
+           .fecha-publicacion {
+               color: black;
+               margin-bottom: 1rem;
+               opacity: 0; /* Establece la opacidad en 0 para ocultar la fecha inicialmente */
+               transform: translateY(20px); /* Mueve la fecha hacia abajo */
+               animation: aparecer 1s forwards; /* Agrega una animación para el efecto */
+               transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Efecto de transición */
            }
-       }
-   
-       button.detailsButton {
-           width: auto;
-           left: 0;
-           position: relative;
-           background-image: linear-gradient(to left, rgb(98, 98, 83) , rgb(72, 71, 71));
-           color: #fcf3f3;
-           padding: 10px 20px;
-           border: none;
-           border-radius: 5px;
-           cursor: pointer;
-           transform: scale(1);
-           transition: background-color 0.3s ease, transform 0.3s ease;
-       }
+           
+           /* Definir la animación "aparecer" */
+           @keyframes aparecer {
+               0% {
+                   opacity: 0;
+                   transform: translateY(20px);
+               }
+               100% {
+                   opacity: 1;
+                   transform: translateY(0);
+               }
+           }
        
-       button.detailsButton:hover {
-           background-image: linear-gradient(to left, rgb(162, 237, 162) , rgb(237, 145, 145));
-            color: white;
-           transform: scale(1.1); /* Aplica un efecto de escalado al botón */
-       }
+           button.detailsButton {
+               width: auto;
+               left: 0;
+               position: relative;
+               background-image: linear-gradient(to left, rgb(98, 98, 83) , rgb(72, 71, 71));
+               color: #fcf3f3;
+               padding: 10px 20px;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+               transform: scale(1);
+               transition: background-color 0.3s ease, transform 0.3s ease;
+           }
+           
+           button.detailsButton:hover {
+               background-image: linear-gradient(to left, rgb(162, 237, 162) , rgb(237, 145, 145));
+                color: white;
+               transform: scale(1.1); /* Aplica un efecto de escalado al botón */
+           }
+   
+}
+
+
+
+@media screen and (min-width: 591px) and (max-width: 767px) {
+
+    body{
+        margin: o;
+        padding: 0;
+      
+    }
+        header{
+            height: 3vh;
+            padding-left: 1rem;
+           
+           }
+           .titulo{
+               font-size: 1.3rem;
+               
+           }
+           #eventosNoticias{
+               height: 0.2rem;
+       
+               font-size: 1rem;
+               font-family: 'Courier New', Courier, monospace;
+               text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
+               text-align: center;
+             
+           }
+           #obras .obra{
+               height: auto;
+               width:13rem;
     
+             
+               
+                
+            }
+       
+            section#obras{
+                   /* background-color: #007bff; */
+                   height: auto;
+                   width:100%;
+                   flex-direction: row;
+                   justify-content:space-around;
+                   align-items: center;
+             
+                 
+                
+                   
+                 
+                   
+                   
+                 
+           } 
+           h2{
+               font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               font-size: 1.3rem;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+             
+           }
+           img{
+               border-radius: 1rem;
+           }
+           p{
+              font-size: 1.3rem;
+              
+           }
+           #pagination{
+               margin-top: 2rem;
+           }
+       
+           .search {
+               height: auto;
+               width: auto; /* Ocupa todo el ancho disponible */
+               margin-bottom: 2rem;
+               margin-left: 0;
+               justify-content:center; /* Espacio entre los elementos */
+               align-items:center; /* Alinea verticalmente al centro */
+           
+              
+           }
+           
+           .search-input-container {
+               justify-content: center;
+               align-items: center;
+               position: relative;
+               justify-content: center;
+               margin-right: 0;
+            
+             
+            
+           }
+           
+           .search-icon {
+               position: absolute;
+               left: 10px; /* Ajusta la posición del ícono horizontalmente */
+               color: #555; /* Color del ícono */
+               pointer-events: none; /* Evita que el ícono sea clickeable */
+             
+           }
+           
+           #searchInput {
+               padding-left:2rem ; /* Ajusta el espaciado a tu preferencia */
+               width: auto;
+               
+             
+           }
+           .fecha-publicacion {
+               color: black;
+               margin-bottom: 1rem;
+               opacity: 0; /* Establece la opacidad en 0 para ocultar la fecha inicialmente */
+               transform: translateY(20px); /* Mueve la fecha hacia abajo */
+               animation: aparecer 1s forwards; /* Agrega una animación para el efecto */
+               transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Efecto de transición */
+           }
+           
+           /* Definir la animación "aparecer" */
+           @keyframes aparecer {
+               0% {
+                   opacity: 0;
+                   transform: translateY(20px);
+               }
+               100% {
+                   opacity: 1;
+                   transform: translateY(0);
+               }
+           }
+       
+           button.detailsButton {
+               width: auto;
+               left: 0;
+               position: relative;
+               background-image: linear-gradient(to left, rgb(98, 98, 83) , rgb(72, 71, 71));
+               color: #fcf3f3;
+               padding: 10px 20px;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+               transform: scale(1);
+               transition: background-color 0.3s ease, transform 0.3s ease;
+           }
+           
+           button.detailsButton:hover {
+               background-image: linear-gradient(to left, rgb(162, 237, 162) , rgb(237, 145, 145));
+                color: white;
+               transform: scale(1.1); /* Aplica un efecto de escalado al botón */
+           }
+   
+}
+
+
+
+
+/* Estilos para tabletas en modo retrato */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body{
+        margin: o;
+        padding: 0;
+      
+    }
+        header{
+            height: 3vh;
+            padding-left: 1rem;
+           
+           }
+           .titulo{
+               font-size: 1.3rem;
+               
+           }
+           #eventosNoticias{
+               height: 0.2rem;
+       
+               font-size: 1rem;
+               font-family: 'Courier New', Courier, monospace;
+               text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
+               text-align: center;
+             
+           }
+           #obras .obra{
+               height: auto;
+               width:15rem;
+    
+             
+               
+                
+            }
+       
+            section#obras{
+                   height: auto;
+                   width:100%;
+                   flex-direction: row;
+                   justify-content:space-around;
+                   align-items: center;
+
+                   gap: 2rem;
+             
+                
+                 
+           } 
+           h2{
+               font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               font-size: 1.3rem;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+             
+           }
+           img{
+               border-radius: 1rem;
+           }
+           p{
+              font-size: 1.3rem;
+              
+           }
+           #pagination{
+               margin-top: 2rem;
+           }
+       
+           .search {
+               height: auto;
+               width: auto; /* Ocupa todo el ancho disponible */
+               margin-bottom: 2rem;
+               margin-left: 0;
+               justify-content:center; /* Espacio entre los elementos */
+               align-items:center; /* Alinea verticalmente al centro */
+           
+              
+           }
+           
+           .search-input-container {
+               justify-content: center;
+               align-items: center;
+               position: relative;
+               justify-content: center;
+               margin-right: 0;
+            
+             
+            
+           }
+           
+           .search-icon {
+               position: absolute;
+               left: 10px; /* Ajusta la posición del ícono horizontalmente */
+               color: #555; /* Color del ícono */
+               pointer-events: none; /* Evita que el ícono sea clickeable */
+             
+           }
+           
+           #searchInput {
+               padding-left:2rem ; /* Ajusta el espaciado a tu preferencia */
+               width: auto;
+               
+             
+           }
+           .fecha-publicacion {
+               color: black;
+               margin-bottom: 1rem;
+               opacity: 0; /* Establece la opacidad en 0 para ocultar la fecha inicialmente */
+               transform: translateY(20px); /* Mueve la fecha hacia abajo */
+               animation: aparecer 1s forwards; /* Agrega una animación para el efecto */
+               transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Efecto de transición */
+           }
+           
+           /* Definir la animación "aparecer" */
+           @keyframes aparecer {
+               0% {
+                   opacity: 0;
+                   transform: translateY(20px);
+               }
+               100% {
+                   opacity: 1;
+                   transform: translateY(0);
+               }
+           }
+       
+           button.detailsButton {
+               width: auto;
+               left: 0;
+               position: relative;
+               background-image: linear-gradient(to left, rgb(98, 98, 83) , rgb(72, 71, 71));
+               color: #fcf3f3;
+               padding: 10px 20px;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+               transform: scale(1);
+               transition: background-color 0.3s ease, transform 0.3s ease;
+           }
+           
+           button.detailsButton:hover {
+               background-image: linear-gradient(to left, rgb(162, 237, 162) , rgb(237, 145, 145));
+                color: white;
+               transform: scale(1.1); /* Aplica un efecto de escalado al botón */
+           }
 }
