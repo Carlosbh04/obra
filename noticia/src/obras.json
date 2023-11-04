@@ -32,7 +32,7 @@
     },
     {
         "id": 1,
-        "titulo": " Nuevo Centro Comercial",
+        "titulo": "Nuevo Centro Comercial",
         "descripcion": "Hoy se inauguró un nuevo centro comercial en la ciudad. Este centro comercial cuenta con una amplia gama de tiendas y restaurantes para satisfacer las necesidades de la comunidad local.",
         "imagen": "/noticia/src/img/OIP.jpeg",
         "fecha": "2023-10-02",
@@ -47,7 +47,7 @@
     },
     {
         "id": 2,
-        "titulo": "Construcción de Viviendas ",
+        "titulo": "Construcción de Vivienda ",
         "descripcion": "Se anunció la construcción de un proyecto de viviendas asequibles. Este proyecto tiene como objetivo proporcionar viviendas asequibles y de alta calidad para las familias de la región.",
         "imagen": "/noticia/src/img/OIP.jpeg",
         "fecha": "2023-10-05",
@@ -62,7 +62,7 @@
     },
     {
         "id": 3,
-        "titulo": "Evento de Caridad para Niños",
+        "titulo": "Evento de Caridad ",
         "descripcion": "El evento de caridad para niños recaudó fondos para apoyar a organizaciones benéficas locales que se centran en el bienestar de los niños. Hubo juegos, actividades y entretenimiento para los más pequeños.",
         "imagen": "/noticia/src/img/OIP.jpeg",
         "fecha": "2023-10-10",
@@ -76,7 +76,7 @@
     },
     {
         "id": 4,
-        "titulo": "Nuevo Parque de Diversiones",
+        "titulo": "Nuevo Parque ",
         "descripcion": "Un emocionante parque de diversiones abrió sus puertas al público. Este parque ofrece una variedad de atracciones emocionantes y diversión para toda la familia.",
         "imagen": "/noticia/src/img/OIP.jpeg",
         "fecha": "2023-10-15",
@@ -91,7 +91,7 @@
     },
     {
         "id": 5,
-        "titulo": "Lanzamiento de Libro de Ciencia",
+        "titulo": "Lanzamiento de Libro ",
         "descripcion": "El autor más vendido John Smith lanzó su último libro de ciencia. El libro explora temas fascinantes en el campo de la ciencia y la tecnología.",
         "imagen": "/noticia/src/img/OIP.jpeg",
         "fecha": "2023-10-20",
@@ -106,7 +106,7 @@
     },
     {
         "id": 6,
-        "titulo": "Obra de Arte en Suiza ayer",
+        "titulo": "Obra de Arte en Suiza ",
         "descripcion": "Esta es una obra de arte creada por un talentoso artista. A continuación, se muestran los detalles de la obra de arte:",
         "imagen": "/noticia/src/img/OIP.jpeg",
         "fecha": "2023",

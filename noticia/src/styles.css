@@ -15,6 +15,7 @@ header {
     color: #fff; /* Color del texto */
     padding: 1%; /* Espaciado interno */
     padding-left: 100px;
+    height: 8vh;
 }
 
 /* Estilos para el enlace dentro del encabezado */
@@ -91,7 +92,7 @@ section#obras {
     margin-bottom: 20px;
     padding: 20px;
     width: calc(33.33% - 20px);
-    height: 50vh;
+    height: 49vh;
     background-image: linear-gradient(to right, rgb(222, 214, 214), white);
     display: flex;
     flex-direction: column;
@@ -191,9 +192,27 @@ button.detailsButton {
 .fecha-publicacion.hidden {
     display: none;
 }
-.fecha-publicacion{
-    margin-bottom: 26px;
+.fecha-publicacion {
+    color: black;
+    position:relative;
+
+    opacity: 1; /* Establece la opacidad en 0 para ocultar la fecha inicialmente */
+    transform: translateY(20px); /* Mueve la fecha hacia abajo */
+    animation: aparecer 1s forwards; /* Agrega una animación para el efecto */
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Efecto de transición */
 }
+
+/* Definir la animación "aparecer" */
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}  
 
 
 
@@ -250,17 +269,21 @@ button.detailsButton {
 #pagination button {
     background-color: rgb(8, 5, 4); /* Color de fondo verde */
     color: white; /* Color del texto blanco */
-    border: 1px solid #4CAF50; /* Borde verde */
+    border: 1px solid #d0f0d1; /* Borde verde */
     padding: 5px 10px; /* Relleno interior */
     border-radius: 5px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar el ratón */
     margin: 0 5px; /* Espacio entre botones */
 }
 
-/* Estilo para el botón activo */
+/* Estilo para el botón activo de paginación */
 #pagination button.active {
     background-color: #dd280c; /* Color de fondo diferente para el botón activo */
+    color: white; /* Color del texto blanco */
+    border: 1px solid #d1f0d2; /* Borde verde o el estilo deseado */
+    /* Otros estilos según tu preferencia */
 }
+
 
 
 
@@ -1101,3 +1124,292 @@ button.detailsButton {
                transform: scale(1.1); /* Aplica un efecto de escalado al botón */
            }
 }
+
+
+/* Estilos para tabletas en modo paisaje y pantallas más grandes (escritorio pequeño) */
+@media screen and (max-width: 1366px) {
+    body{
+        margin: o;
+        padding: 0;
+      
+    }
+        header{
+            height: 3vh;
+            padding-left: 1rem;
+           
+           }
+           .titulo{
+               font-size: 1.3rem;
+               
+           }
+           #eventosNoticias{
+               height: 0.2rem;
+       
+               font-size: 1rem;
+               font-family: 'Courier New', Courier, monospace;
+               text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
+               text-align: center;
+             
+           }
+           #obras .obra{
+               height: auto;
+               width:15rem;
+    
+             
+               
+                
+            }
+       
+            section#obras{
+                   height: auto;
+                   width:100%;
+                   flex-direction: row;
+                   justify-content:space-around;
+                   align-items: center;
+
+                   gap: 2rem;
+             
+                
+                 
+           } 
+           h2{
+               font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               font-size: 1.3rem;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+             
+           }
+           img{
+               border-radius: 1rem;
+           }
+           p{
+              font-size: 1.3rem;
+              
+           }
+           #pagination{
+               margin-top: 2rem;
+           }
+       
+           .search {
+               height: auto;
+               width: auto; /* Ocupa todo el ancho disponible */
+               margin-bottom: 2rem;
+               margin-left: 0;
+               justify-content:center; /* Espacio entre los elementos */
+               align-items:center; /* Alinea verticalmente al centro */
+           
+              
+           }
+           
+           .search-input-container {
+               justify-content: center;
+               align-items: center;
+               position: relative;
+               justify-content: center;
+               margin-right: 0;
+            
+             
+            
+           }
+           
+           .search-icon {
+               position: absolute;
+               left: 10px; /* Ajusta la posición del ícono horizontalmente */
+               color: #555; /* Color del ícono */
+               pointer-events: none; /* Evita que el ícono sea clickeable */
+             
+           }
+           
+           #searchInput {
+               padding-left:2rem ; /* Ajusta el espaciado a tu preferencia */
+               width: auto;
+               
+             
+           }
+           .fecha-publicacion {
+               color: black;
+               margin-bottom: 0.6rem;
+               opacity: 0; /* Establece la opacidad en 0 para ocultar la fecha inicialmente */
+               transform: translateY(20px); /* Mueve la fecha hacia abajo */
+               animation: aparecer 1s forwards; /* Agrega una animación para el efecto */
+               transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Efecto de transición */
+           }
+           
+           /* Definir la animación "aparecer" */
+           @keyframes aparecer {
+               0% {
+                   opacity: 0;
+                   transform: translateY(20px);
+               }
+               100% {
+                   opacity: 1;
+                   transform: translateY(0);
+               }
+           }
+       
+           button.detailsButton {
+               width: auto;
+               left: 0;
+               position: relative;
+               background-image: linear-gradient(to left, rgb(98, 98, 83) , rgb(72, 71, 71));
+               color: #fcf3f3;
+               padding: 10px 20px;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+               transform: scale(1);
+               transition: background-color 0.3s ease, transform 0.3s ease;
+           }
+           
+           button.detailsButton:hover {
+               background-image: linear-gradient(to left, rgb(162, 237, 162) , rgb(237, 145, 145));
+                color: white;
+               transform: scale(1.1); /* Aplica un efecto de escalado al botón */
+           }
+    
+}
+
+
+@media screen and (min-width: 1601px) {
+    
+    body{
+        margin: o;
+        padding: 0;
+      
+    }
+        header{
+            height: 3vh;
+            padding-left: 1rem;
+           
+           }
+           .titulo{
+               font-size: 1.3rem;
+               
+           }
+           #eventosNoticias{
+               height: 0.2rem;
+       
+               font-size: 1rem;
+               font-family: 'Courier New', Courier, monospace;
+               text-shadow: 2px 4px 4px rgba(35, 33, 33, 0.5);
+               text-align: center;
+             
+           }
+           #obras .obra{
+               height: auto;
+               width:15rem;
+    
+             
+               
+                
+            }
+       
+            section#obras{
+                   height: auto;
+                   width:100%;
+                   flex-direction: row;
+                   justify-content:space-around;
+                   align-items: center;
+
+                   gap: 2rem;
+             
+                
+                 
+           } 
+           h2{
+               font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               font-size: 1.3rem;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+             
+           }
+           img{
+               border-radius: 1rem;
+           }
+           p{
+              font-size: 1.3rem;
+              
+           }
+           #pagination{
+               margin-top: 2rem;
+           }
+       
+           .search {
+               height: auto;
+               width: auto; /* Ocupa todo el ancho disponible */
+               margin-bottom: 2rem;
+               margin-left: 0;
+               justify-content:center; /* Espacio entre los elementos */
+               align-items:center; /* Alinea verticalmente al centro */
+           
+              
+           }
+           
+           .search-input-container {
+               justify-content: center;
+               align-items: center;
+               position: relative;
+               justify-content: center;
+               margin-right: 0;
+            
+             
+            
+           }
+           
+           .search-icon {
+               position: absolute;
+               left: 10px; /* Ajusta la posición del ícono horizontalmente */
+               color: #555; /* Color del ícono */
+               pointer-events: none; /* Evita que el ícono sea clickeable */
+             
+           }
+           
+           #searchInput {
+               padding-left:2rem ; /* Ajusta el espaciado a tu preferencia */
+               width: auto;
+               
+             
+           }
+           .fecha-publicacion {
+               color: black;
+               margin-bottom: 0.6rem;
+               opacity: 0; /* Establece la opacidad en 0 para ocultar la fecha inicialmente */
+               transform: translateY(20px); /* Mueve la fecha hacia abajo */
+               animation: aparecer 1s forwards; /* Agrega una animación para el efecto */
+               transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Efecto de transición */
+           }
+           
+           /* Definir la animación "aparecer" */
+           @keyframes aparecer {
+               0% {
+                   opacity: 0;
+                   transform: translateY(20px);
+               }
+               100% {
+                   opacity: 1;
+                   transform: translateY(0);
+               }
+           }
+       
+           button.detailsButton {
+               width: auto;
+               left: 0;
+               position: relative;
+               background-image: linear-gradient(to left, rgb(98, 98, 83) , rgb(72, 71, 71));
+               color: #fcf3f3;
+               padding: 10px 20px;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+               transform: scale(1);
+               transition: background-color 0.3s ease, transform 0.3s ease;
+           }
+           
+           button.detailsButton:hover {
+               background-image: linear-gradient(to left, rgb(162, 237, 162) , rgb(237, 145, 145));
+                color: white;
+               transform: scale(1.1); /* Aplica un efecto de escalado al botón */
+           }
+    
+}
+
+
+

@@ -175,6 +175,10 @@ function renderPagination() {
             currentPage = i;
             renderObras();
         });
+
+        if (i === currentPage) {
+            button.classList.add('active'); // Agregar la clase "active" al botón de la página actual
+        }
         paginationButtons.push(button);
     }
 

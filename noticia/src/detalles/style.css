@@ -3,26 +3,20 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+
     color: #333;
     transition: background-color 0.3s;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
 
-h1 {
-    font-size: 24px;
-}
+
 
 main {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    
+    
 }
 
 /* Estilos para la sección de detalles de la obra */
@@ -191,3 +185,45 @@ a.back-button:hover {
 }
 
 
+
+@media screen and (min-width: 280px) {
+    body {
+        margin: 0; /* Elimina los márgenes por defecto del body */
+        padding: 0; /* Elimina el relleno por defecto del body */
+    }
+
+    main {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 0.1rem;
+        height: auto;
+        background: linear-gradient(to bottom , rgb(200, 197, 197), rgb(213, 213, 213));
+    }
+
+    .obra-details {
+        background: linear-gradient(to left , rgb(232, 227, 215), rgb(130, 134, 134));
+        border-radius: 1px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 0;
+        text-align: center;
+        transition: box-shadow 0.3s;
+        width: auto;
+    }
+
+    .obra-details:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin: 10px 0;
+        color: #333;
+        transition: color 0.3s;
+    }
+
+    .obra-details:hover h2 {
+        color: #007BFF;
+    }
+}
