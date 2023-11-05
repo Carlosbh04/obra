@@ -1,6 +1,7 @@
 const detailTitle = document.getElementById('detailTitle');
 const detailImage = document.getElementById('detailImage');
 const detailDescription = document.getElementById('detailDescription');
+const detallesNormales = document.getElementById('detalles');
 const detallesAvanzados = document.getElementById('detallesAvanzados');
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -16,22 +17,24 @@ if (id !== null) {
                 detailTitle.textContent = obra.titulo;
                 detailImage.src = obra.imagen;
                 detailDescription.textContent = obra.descripcion;
-                detallesAvanzados.textContent = obra.detalles; // Cambiar detalles a detallesAvanzados
-
-                // Agregar los detalles avanzados al elemento 'detallesAvanzados' si existe
-                if (detallesAvanzados) {
-                    detallesAvanzados.innerHTML = `
-                        Fecha: ${obra.fecha}<br>
-                        Lugar: ${obra.lugar}<br>
-                        Artista: ${obra.nombreArtista}<br>
-                        Año de Creación: ${obra.anioCreacion}<br>
-                        Técnica: ${obra.tecnica}<br>
-                        Dimensiones: ${obra.dimensiones}<br>
-                    `;
+                if (detallesNormales) {
+                    detallesNormales.textContent = obra.detalles;
                 }
-            } else {
-                detailTitle.textContent = 'Obra no encontrada';
+                detallesAvanzados.innerHTML = `
+                    Fecha: ${obra.fecha}<br>
+                    Lugar: ${obra.lugar}<br>
+                    Artista: ${obra.nombreArtista}<br>
+                    Año de Creación: ${obra.anioCreacion}<br>
+                    Técnica: ${obra.tecnica}<br>
+                    Dimensiones: ${obra.dimensiones}<br>
+                    
+                `;
+                console.log('ID:', id);
+console.log('Obra:', obra);
+
+                
             }
+        
         })
         .catch((error) => {
             console.error('Error al cargar datos: ', error);
@@ -127,3 +130,9 @@ function updateZoom() {
         popupImage.style.transform = `scale(${currentZoomLevel / 100})`;
     }
 }
+
+// JavaScript para agregar la clase .show al cargar la página
+window.addEventListener("load", function() {
+    var obraDetails = document.querySelector(".obra-details");
+    obraDetails.classList.add("show");
+});

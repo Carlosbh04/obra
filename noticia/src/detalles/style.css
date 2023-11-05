@@ -1,14 +1,9 @@
-/* Estilos generales */
+
+/* Agregar animación de entrada al cargar la página */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-
-    color: #333;
-    transition: background-color 0.3s;
+    opacity: 0; /* Inicialmente, ocultamos el cuerpo de la página */
+    animation: page-load 1s ease-in-out forwards;
 }
-
-
 
 
 main {
@@ -19,23 +14,79 @@ main {
     
 }
 
+
+@keyframes page-load {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Estilos para la sección de detalles de la obra */
 .obra-details {
-    background-color: #fff;
+    background: linear-gradient(to left , rgb(232, 227, 215), rgb(130, 134, 134));
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px;
+    font-size: 20px;
     text-align: center;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, color 0.3s; /* Agregamos una transición de color */
+    opacity: 0; /* Inicialmente, ocultamos el elemento */
+    transform: translateY(20px); /* Desplazamos hacia abajo */
 }
 
 .obra-details:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: #0078f8; /* Cambiamos el color al pasar el ratón */
 }
 
+.obra-details img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    transform: scale(0.9); /* Escalamos la imagen inicialmente */
+    transition: transform 0.3s;
+}
+
+/* Animación de entrada para .obra-details al cargar la página */
+.obra-details.show {
+    animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de entrada para letras */
+.obra-details p {
+    opacity: 0; /* Inicialmente, ocultamos las letras */
+    animation: text-fade-in 0.5s ease-out 1s forwards;
+}
+
+@keyframes text-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
 h2 {
-    font-size: 28px;
+    font-size: 2.5rem;
     margin: 10px 0;
     color: #333;
     transition: color 0.3s;
@@ -45,23 +96,6 @@ h2 {
     color: #007BFF;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px 0;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-
-
-p {
-    font-size: 18px;
-    text-align: center;
-    line-height: 1.6;
-    color: #555;
-    transition: color 0.3s;
-}
 
 .obra-details:hover p {
     color: #333;
@@ -78,33 +112,25 @@ a:hover {
     color: #0056b3;
 }
 
-/* Estilos para el botón de volver */
-a.back-button {
-    display: inline-block;
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 20px;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-a.back-button:hover {
-    background-color: #0056b3;
-}
-
 /* Estilos para detalles avanzados */
 #detallesAvanzados {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
+    font-size: 23px;
+    text-align: left; /* Alinea el texto al centro */
+    line-height: 1.6;
+    color: #000000;
+    transition: color 0.3s;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  
+    
+
+    /* Centrar horizontal y verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #7c93a9; /* Fondo blanco */
 }
 
 #detallesAvanzados:hover {
@@ -114,7 +140,7 @@ a.back-button:hover {
 
 
 
-/* Estilo para la ventana emergente */
+
 /* Estilo para la ventana emergente */
 .modal {
     display: none;
@@ -186,30 +212,38 @@ a.back-button:hover {
 
 
 
-@media screen and (min-width: 280px) {
+
+
+
+
+/* estilos de pantalla celular tablet  */
+
+
+@media screen and (max-width: 280px) {
     body {
         margin: 0; /* Elimina los márgenes por defecto del body */
         padding: 0; /* Elimina el relleno por defecto del body */
     }
 
     main {
-        width: 100%;
+        width:auto;
         align-items: center;
         justify-content: center;
-        padding: 0.1rem;
+        padding: 0;
         height: auto;
-        background: linear-gradient(to bottom , rgb(200, 197, 197), rgb(213, 213, 213));
+       
     }
 
     .obra-details {
         background: linear-gradient(to left , rgb(232, 227, 215), rgb(130, 134, 134));
-        border-radius: 1px;
+        border-radius: 0;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
-        margin: 0;
+        margin:0;
         text-align: center;
         transition: box-shadow 0.3s;
         width: auto;
+        height: auto;
     }
 
     .obra-details:hover {
@@ -226,4 +260,1033 @@ a.back-button:hover {
     .obra-details:hover h2 {
         color: #007BFF;
     }
+
+    img{
+        width: auto;
+        height: auto;
+    }
+    p{
+        color: black;
+    }
+    .obra-details:hover p{
+        color:#333;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: #092b90;
+        transition: color 0.3s;
+    }
+
+    #detallesAvanzados {
+        margin-left: 0;
+        padding: 15px 0px;
+        color: white;
+        background-color: #6b7b8c;
+   
+    }
+
+    #detallesAvanzados:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    
+    #detallesAvanzados {
+        font-size: 1rem;
+        text-align: left; /* Alinea el texto al centro */
+        line-height: 1.6;
+        color: #000000;
+        transition: color 0.3s;
+    
+        /* Centrar horizontal y verticalmente */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        background-color: #7c93a9; /* Fondo blanco */
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    
+    /* Estilo para los botones de zoom dentro de la ventana emergente */
+    .modal-content-container {
+        text-align: center;
+        position: relative;
+    }
+    
+    /* Estilo para los botones de zoom dentro del contenedor */
+    #zoomInButton,
+    #zoomOutButton {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        position: absolute;
+        top: 50%; /* Coloca los botones en el centro verticalmente */
+        transform: translateY(-50%); /* Alinea verticalmente al 50% del contenedor */
+        z-index: 2; /* Z-index mayor para los botones */
+    }
+    
+    #zoomInButton {
+        left: 50px; /* Coloca el botón de zoom en el lado izquierdo */
+    }
+    
+    #zoomOutButton {
+        right: 50px; /* Coloca el botón de zoom en el lado derecho */
+    }
+    
+    /* Estilo para la imagen en el modal */
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 80%;
+        max-height: 80%;
+        margin-top: 200px;
+        transform: rotate(-90deg); /* Rota la imagen 90 grados en sentido antihorario */
+        transform-origin: center; /* Define el punto de rotación en el centro de la imagen */
+        z-index: 1; /* Z-index menor para la imagen */
+    }
+    
+    
+    /* Estilo para el botón de cerrar */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1;
+    }
+    
+}
+
+@media screen and (min-width: 281px) and (max-width: 350px) {
+
+    body {
+        margin: 0; /* Elimina los márgenes por defecto del body */
+        padding: 0; /* Elimina el relleno por defecto del body */
+    }
+
+    main {
+        width:auto;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+     
+       
+    }
+
+    .obra-details {
+        background: linear-gradient(to left , rgb(232, 227, 215), rgb(130, 134, 134));
+        border-radius: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin:0;
+        text-align: center;
+        transition: box-shadow 0.3s;
+        width: auto;
+        height: 95vh;
+        
+    }
+
+    .obra-details:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin: 10px 0;
+        color: #333;
+        transition: color 0.3s;
+        white-space: pre-wrap; /* Rompe palabras y permite el salto de línea */
+        overflow-wrap: break-word; /* Controla el salto de línea entre letras y palabras */
+    }
+    
+
+    .obra-details:hover h2 {
+        color: #007BFF;
+    }
+
+    img{
+        width: 18rem;
+        height: auto;
+    }
+    p{
+        font-size: 1rem;
+        color: black;
+    }
+    .obra-details:hover p{
+        color:#333;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: #092b90;
+        transition: color 0.3s;
+    
+    }
+
+ 
+    
+    #detallesAvanzados {
+        font-size: 1rem;
+        text-align: left; /* Alinea el texto al centro */
+        line-height: 1.6;
+        color: #000000;
+        transition: color 0.3s;
+      
+        
+    
+        /* Centrar horizontal y verticalmente */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #7c93a9; /* Fondo blanco */
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    
+    /* Estilo para los botones de zoom dentro de la ventana emergente */
+    .modal-content-container {
+        text-align: center;
+        position: relative;
+    }
+    
+    /* Estilo para los botones de zoom dentro del contenedor */
+    #zoomInButton,
+    #zoomOutButton {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        position: absolute;
+        top: 50%; /* Coloca los botones en el centro verticalmente */
+        transform: translateY(-50%); /* Alinea verticalmente al 50% del contenedor */
+        z-index: 2; /* Z-index mayor para los botones */
+    }
+    
+    #zoomInButton {
+        left: 50px; /* Coloca el botón de zoom en el lado izquierdo */
+    }
+    
+    #zoomOutButton {
+        right: 50px; /* Coloca el botón de zoom en el lado derecho */
+    }
+    
+    /* Estilo para la imagen en el modal */
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 80%;
+        max-height: 80%;
+        margin-top: 200px;
+        transform: rotate(-90deg); /* Rota la imagen 90 grados en sentido antihorario */
+        transform-origin: center; /* Define el punto de rotación en el centro de la imagen */
+        z-index: 1; /* Z-index menor para la imagen */
+    }
+    
+    
+    /* Estilo para el botón de cerrar */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1;
+    }
+   
+}
+
+
+
+@media  screen and (min-width:351px) and (max-width:440px) {
+    body {
+        margin: 0; /* Elimina los márgenes por defecto del body */
+        padding: 0; /* Elimina el relleno por defecto del body */
+    }
+
+    main {
+        width:auto;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+     
+       
+    }
+
+    .obra-details {
+        background: linear-gradient(to left , rgb(232, 227, 215), rgb(130, 134, 134));
+        border-radius: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin:0;
+        text-align: center;
+        transition: box-shadow 0.3s;
+        width: auto;
+        height: 95vh;
+        
+    }
+
+    .obra-details:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin: 10px 0;
+        color: #333;
+        transition: color 0.3s;
+        white-space: pre-wrap; /* Rompe palabras y permite el salto de línea */
+        overflow-wrap: break-word; /* Controla el salto de línea entre letras y palabras */
+    }
+    
+
+    .obra-details:hover h2 {
+        color: #007BFF;
+    }
+
+    img{
+        width: 18rem;
+        height: auto;
+    }
+    p{ 
+      
+         width: 20rem;
+         margin: auto;
+         font-size: 1rem;
+         color: black;
+    }
+    .obra-details:hover p{
+        color:#333;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: #092b90;
+        transition: color 0.3s;
+
+    }
+
+ 
+    
+    #detallesAvanzados {
+        font-size: 1rem;
+        text-align: left; /* Alinea el texto al centro */
+        line-height: 1.6;
+        color: #000000;
+        transition: color 0.3s;
+        width: 17.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        
+    
+        /* Centrar horizontal y verticalmente */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #7c93a9; /* Fondo blanco */
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    
+    /* Estilo para los botones de zoom dentro de la ventana emergente */
+    .modal-content-container {
+        text-align: center;
+        position: relative;
+    }
+    
+    
+ /* Estilo para los botones de zoom dentro del contenedor */
+#zoomInButton,
+#zoomOutButton {
+    background-color: #147ded;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: background-color 0.3s, opacity 0.1s; /* Agregamos transición a la opacidad */
+    opacity: 0.3; /* Establecemos la opacidad inicial */
+}
+
+#zoomInButton:hover,
+#zoomOutButton:hover {
+    opacity: 0.8; /* Al pasar el mouse por encima, reducimos la opacidad */
+}
+
+#zoomInButton {
+    left: 50px;
+}
+
+#zoomOutButton {
+    right: 50px;
+}
+
+    
+   /* Estilo para la imagen en el modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    margin-top: 200px;
+    transform: rotate(-90deg) scaleY(-1); /* Rota la imagen 90 grados en sentido antihorario y refleja verticalmente */
+    transform-origin: center; /* Define el punto de rotación en el centro de la imagen */
+    z-index: 1; /* Z-index menor para la imagen */
+    cursor: pointer; /* Agregamos cursor pointer para indicar que la imagen es desplazable */
+    overflow: auto; /* Agregamos desplazamiento cuando la imagen es más grande que la ventana modal */
+}
+
+    
+    
+    /* Estilo para el botón de cerrar */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1;
+    }
+   
+    
+}
+
+/* Estilos para pantallas medianas (441px - 600px de ancho) */
+@media screen and (min-width: 441px) and (max-width: 600px) {
+    body {
+        margin: 0; /* Elimina los márgenes por defecto del body */
+        padding: 0; /* Elimina el relleno por defecto del body */
+        overflow-x: auto;
+    }
+
+    main {
+        width:auto;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+     
+       
+    }
+
+    .obra-details {
+        background: linear-gradient(to left , rgb(232, 227, 215), rgb(130, 134, 134));
+        border-radius: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin:0;
+        text-align: center;
+        transition: box-shadow 0.3s;
+        width: auto;
+        height: 95vh;
+        
+    }
+
+    .obra-details:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin: 10px 0;
+        color: #333;
+        transition: color 0.3s;
+        white-space: pre-wrap; /* Rompe palabras y permite el salto de línea */
+        overflow-wrap: break-word; /* Controla el salto de línea entre letras y palabras */
+    }
+    
+
+    .obra-details:hover h2 {
+        color: #007BFF;
+    }
+
+    img{
+        width: 21rem;
+        height: auto;
+    }
+    p{ 
+      
+         width: 22rem;
+         margin: auto;
+         font-size: 1rem;
+         color: black;
+    }
+    .obra-details:hover p{
+        color:#333;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: #092b90;
+        transition: color 0.3s;
+
+    }
+
+ 
+    
+    #detallesAvanzados {
+        font-size: 1rem;
+        text-align: left; /* Alinea el texto al centro */
+        line-height: 1.6;
+        color: #000000;
+        transition: color 0.3s;
+        width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+        
+    
+        /* Centrar horizontal y verticalmente */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #7c93a9; /* Fondo blanco */
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow-x: scroll; 
+        white-space: nowrap;
+      
+    }
+    
+    /* Estilo para los botones de zoom dentro de la ventana emergente */
+    .modal-content-container {
+        text-align: center;
+        position: relative;
+
+        white-space: nowrap; 
+    }
+    
+    
+ /* Estilo para los botones de zoom dentro del contenedor */
+#zoomInButton,
+#zoomOutButton {
+    background-color: #147ded;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: background-color 0.3s, opacity 0.1s; /* Agregamos transición a la opacidad */
+    opacity: 0.2; /* Establecemos la opacidad inicial */
+}
+
+#zoomInButton:hover,
+#zoomOutButton:hover {
+    opacity: 0.1; /* Al pasar el mouse por encima, reducimos la opacidad */
+}
+
+#zoomInButton {
+    left: 50px;
+}
+
+#zoomOutButton {
+    right: 50px;
+}
+
+    
+   /* Estilo para la imagen en el modal */
+   .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    margin-top: 200px;
+    white-space: nowrap; /* Evita que el contenido se divida en múltiples líneas */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+    transform: rotate(-90deg); /* Rota la imagen 90 grados en sentido antihorario */
+    transform-origin: center; /* Define el punto de rotación en el centro de la imagen */
+    z-index: 1; /* Z-index menor para la imagen */
+}
+
+    
+    /* Estilo para el botón de cerrar */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1;
+    }
+   
+}
+
+
+
+/* Estilos para pantallas medianas-grandes (601px - 760px de ancho) */
+@media screen and (min-width: 601px) and (max-width: 760px) {
+    body {
+        margin: 0; /* Elimina los márgenes por defecto del body */
+        padding: 0; /* Elimina el relleno por defecto del body */
+        overflow-x: auto;
+        background-color: rgb(234, 229, 229);
+        
+       
+    }
+
+    main {
+        width:auto;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        
+        height: auto;
+     
+       
+    }
+
+    .obra-details {
+        background: linear-gradient(to left , rgb(232, 227, 215), rgb(130, 134, 134));
+        border-radius: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin:auto;
+        text-align: center;
+        transition: box-shadow 0.3s;
+        width: 70%;
+        height: auto;
+        border-radius: 2rem;
+        justify-content: center;
+        align-items: center;
+    
+        
+    }
+
+    .obra-details:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin: 10px 0;
+        color: #333;
+        transition: color 0.3s;
+        white-space: pre-wrap; /* Rompe palabras y permite el salto de línea */
+        overflow-wrap: break-word; /* Controla el salto de línea entre letras y palabras */
+    }
+    
+
+    .obra-details:hover h2 {
+        color: #007BFF;
+    }
+
+    img{
+        width: 21rem;
+        height: auto;
+    }
+    p{ 
+      
+         width: 22rem;
+         margin: auto;
+         font-size: 0.9rem;
+         color: black;
+    }
+    .obra-details:hover p{
+        color:#333;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: #092b90;
+        transition: color 0.3s;
+
+    }
+
+ 
+    
+    #detallesAvanzados {
+        font-size: 1rem;
+        text-align: left; /* Alinea el texto al centro */
+        line-height: 1.6;
+        color: #000000;
+        transition: color 0.3s;
+        width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+        
+    
+        /* Centrar horizontal y verticalmente */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #7c93a9; /* Fondo blanco */
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow-x: scroll; 
+        white-space: nowrap;
+      
+    }
+    
+    /* Estilo para los botones de zoom dentro de la ventana emergente */
+    .modal-content-container {
+        text-align: center;
+        position: relative;
+
+        white-space: nowrap; 
+    }
+    
+    
+ /* Estilo para los botones de zoom dentro del contenedor */
+#zoomInButton,
+#zoomOutButton {
+    background-color: #147ded;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: background-color 0.3s, opacity 0.1s; /* Agregamos transición a la opacidad */
+    opacity: 0.2; /* Establecemos la opacidad inicial */
+}
+
+#zoomInButton:hover,
+#zoomOutButton:hover {
+    opacity: 0.1; /* Al pasar el mouse por encima, reducimos la opacidad */
+}
+
+#zoomInButton {
+    left: 50px;
+}
+
+#zoomOutButton {
+    right: 50px;
+}
+
+    
+   /* Estilo para la imagen en el modal */
+   .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    margin-top: 200px;
+    white-space: nowrap; /* Evita que el contenido se divida en múltiples líneas */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+    transform: rotate(-90deg); /* Rota la imagen 90 grados en sentido antihorario */
+    transform-origin: center; /* Define el punto de rotación en el centro de la imagen */
+    z-index: 1; /* Z-index menor para la imagen */
+}
+
+    
+    /* Estilo para el botón de cerrar */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1;
+    }
+   
+}
+
+/* Estilos para pantallas grandes (761px - 920px de ancho) */
+@media screen and (min-width: 761px) and (max-width: 920px) {
+    body {
+        margin: 0; /* Elimina los márgenes por defecto del body */
+        padding: 0; /* Elimina el relleno por defecto del body */
+        overflow-x: auto;
+        background-color: rgb(234, 229, 229);
+       
+        
+       
+    }
+
+    main {
+        width:auto;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2rem;
+        height:auto;
+  
+       
+    }
+
+    .obra-details {
+        background: linear-gradient(to left , rgb(232, 227, 215), rgb(130, 134, 134));
+        border-radius: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin:auto;
+        text-align: center;
+        transition: box-shadow 0.3s;
+        width: 80%;
+        height: auto;
+        border-radius: 2rem;
+        justify-content: center;
+        align-items: center;
+    
+        
+    }
+
+    .obra-details:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin: 10px 0;
+        color: #333;
+        transition: color 0.3s;
+        white-space: pre-wrap; /* Rompe palabras y permite el salto de línea */
+        overflow-wrap: break-word; /* Controla el salto de línea entre letras y palabras */
+    }
+    
+
+    .obra-details:hover h2 {
+        color: #007BFF;
+    }
+
+    img{
+        width: 21rem;
+        height: auto;
+    }
+    p{ 
+      
+         width: 29rem;
+         margin: auto;
+         font-size: 1.3rem;
+         color: black;
+         gap: 1rem;
+    }
+    .obra-details:hover p{
+        color:#333;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: #092b90;
+        transition: color 0.3s;
+        font-size: 1.3rem;
+
+    }
+
+ 
+    
+    #detallesAvanzados {
+        font-size: 1.2rem;
+        text-align: left; /* Alinea el texto al centro */
+        line-height: 1.6;
+        color: #000000;
+        transition: color 0.3s;
+        width: 23rem;
+        margin-left: auto;
+        margin-right: auto;
+        
+    
+        /* Centrar horizontal y verticalmente */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #7c93a9; /* Fondo blanco */
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow-x: scroll; 
+        white-space: nowrap;
+      
+    }
+    
+    /* Estilo para los botones de zoom dentro de la ventana emergente */
+    .modal-content-container {
+        text-align: center;
+        position: relative;
+
+        white-space: nowrap; 
+    }
+    
+    
+ /* Estilo para los botones de zoom dentro del contenedor */
+#zoomInButton,
+#zoomOutButton {
+    background-color: #147ded;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: background-color 0.3s, opacity 0.1s; /* Agregamos transición a la opacidad */
+    opacity: 0.2; /* Establecemos la opacidad inicial */
+}
+
+#zoomInButton:hover,
+#zoomOutButton:hover {
+    opacity: 0.1; /* Al pasar el mouse por encima, reducimos la opacidad */
+}
+
+#zoomInButton {
+    left: 50px;
+}
+
+#zoomOutButton {
+    right: 50px;
+}
+
+    
+   /* Estilo para la imagen en el modal */
+   .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    margin-top: 200px;
+    white-space: nowrap; /* Evita que el contenido se divida en múltiples líneas */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+    transform: rotate(-90deg); /* Rota la imagen 90 grados en sentido antihorario */
+    transform-origin: center; /* Define el punto de rotación en el centro de la imagen */
+    z-index: 1; /* Z-index menor para la imagen */
+}
+
+    
+    /* Estilo para el botón de cerrar */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1;
+    }
+}
+
+/* Estilos para pantallas extra grandes (921px - 1080px de ancho) */
+@media screen and (min-width: 921px) and (max-width: 1080px) {
+    /* Agrega tus estilos para pantallas extra grandes aquí */
+}
+
+/* Estilos para pantallas muy grandes (1081px - 1240px de ancho) */
+@media screen and (min-width: 1081px) and (max-width: 1240px) {
+    /* Agrega tus estilos para pantallas muy grandes aquí */
+}
+
+/* Estilos para pantallas enormes (1241px - 1400px de ancho) */
+@media screen and (min-width: 1241px) and (max-width: 1400px) {
+    /* Agrega tus estilos para pantallas enormes aquí */
+}
+
+/* Estilos para pantallas gigantes (más de 1400px de ancho) */
+@media screen and (min-width: 1401px) {
+    /* Agrega tus estilos para pantallas gigantes aquí */
 }
