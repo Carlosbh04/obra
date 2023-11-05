@@ -10,6 +10,7 @@ main {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+   
     
     
 }
@@ -36,6 +37,12 @@ main {
     transition: box-shadow 0.3s, color 0.3s; /* Agregamos una transición de color */
     opacity: 0; /* Inicialmente, ocultamos el elemento */
     transform: translateY(20px); /* Desplazamos hacia abajo */
+   
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .obra-details:hover {
@@ -72,6 +79,8 @@ main {
 .obra-details p {
     opacity: 0; /* Inicialmente, ocultamos las letras */
     animation: text-fade-in 0.5s ease-out 1s forwards;
+    width: 70%;
+   
 }
 
 @keyframes text-fade-in {
@@ -106,6 +115,7 @@ a {
     text-decoration: none;
     color: #007BFF;
     transition: color 0.3s;
+
 }
 
 a:hover {
@@ -119,9 +129,8 @@ a:hover {
     line-height: 1.6;
     color: #000000;
     transition: color 0.3s;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 10px;
+ 
   
     
 
@@ -249,6 +258,13 @@ a:hover {
     .obra-details:hover {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
+    .obra-details h2 {
+        margin-bottom: 0; /* Agregar margen inferior entre el título y la imagen */
+    }
+    
+    .obra-details p {
+        margin-bottom: 10px; /* Agregar margen inferior entre párrafos */
+    }
 
     h2 {
         font-size: 1.4rem;
@@ -266,6 +282,7 @@ a:hover {
         height: auto;
     }
     p{
+        font-size: 1rem;
         color: black;
     }
     .obra-details:hover p{
@@ -410,6 +427,13 @@ a:hover {
 
     .obra-details:hover {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    .obra-details h2 {
+        margin-bottom: 0; /* Agregar margen inferior entre el título y la imagen */
+    }
+    
+    .obra-details p {
+        margin-bottom: 10px; /* Agregar margen inferior entre párrafos */
     }
 
     h2 {
@@ -570,6 +594,14 @@ a:hover {
     .obra-details:hover {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
+    .obra-details h2 {
+        margin-bottom: 0; /* Agregar margen inferior entre el título y la imagen */
+    }
+    
+    .obra-details p {
+        margin-bottom: 10px; /* Agregar margen inferior entre párrafos */
+    }
+    
 
     h2 {
         font-size: 1.6rem;
@@ -606,6 +638,8 @@ a:hover {
         text-decoration: none;
         color: #092b90;
         transition: color 0.3s;
+        
+        
 
     }
 
@@ -620,6 +654,9 @@ a:hover {
         width: 17.5rem;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 1rem;
+        margin-bottom: 0.3rem;
+    
         
     
         /* Centrar horizontal y verticalmente */
@@ -739,12 +776,20 @@ a:hover {
         text-align: center;
         transition: box-shadow 0.3s;
         width: auto;
-        height: 95vh;
+        height: auto;
         
     }
 
     .obra-details:hover {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .obra-details h2 {
+        margin-bottom: 0; /* Agregar margen inferior entre el título y la imagen */
+    }
+    
+    .obra-details p {
+        margin-bottom: 10px; /* Agregar margen inferior entre párrafos */
     }
 
     h2 {
@@ -936,6 +981,13 @@ a:hover {
     .obra-details:hover {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
+    .obra-details h2 {
+        margin-bottom: 0; /* Agregar margen inferior entre el título y la imagen */
+    }
+    
+    .obra-details p {
+        margin-bottom: 10px; /* Agregar margen inferior entre párrafos */
+    }
 
     h2 {
         font-size: 1.8rem;
@@ -1124,7 +1176,13 @@ a:hover {
     .obra-details:hover {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
-
+    .obra-details h2 {
+        margin-bottom: 0; /* Agregar margen inferior entre el título y la imagen */
+    }
+    
+    .obra-details p {
+        margin-bottom: 10px; /* Agregar margen inferior entre párrafos */
+    }
     h2 {
         font-size: 2rem;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
