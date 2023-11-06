@@ -123,23 +123,10 @@ function renderObras() {
             fechaPublicacion.classList.remove('hidden');
         }
 
-       // Event Listener para cargar detalles al hacer clic en un botón de obra
-obrasContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('detailsButton')) {
-        const obraId = event.target.getAttribute('data-index'); // Obtén el ID de la obra directamente
-
-        if (obraId) {
-            event.preventDefault(); // Evita el comportamiento predeterminado del enlace
-
-            // Oculta los elementos relacionados con la información de la obra antes de la redirección
-            obrasContainer.innerHTML = '';
-
-            // Realiza la redirección a la página de detalles
+        obraElement.querySelector('.detailsButton').addEventListener('click', () => {
+            const obraId = obra.id;
             redirectToDetailsPage(obraId);
-        }
-    }
-});
-
+        });
 
         obrasContainer.appendChild(obraElement);
     });
