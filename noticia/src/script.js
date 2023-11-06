@@ -78,6 +78,7 @@ function loadObrasData() {
 }
 
 // Función para renderizar las obras en la página
+// Función para renderizar las obras en la página
 function renderObras() {
     const startIndex = (currentPage - 1) * obrasPerPage;
     const endIndex = startIndex + obrasPerPage;
@@ -106,30 +107,25 @@ function renderObras() {
             avisoTemporal.textContent = '¡Nuevo!';
             obraElement.appendChild(avisoTemporal);
 
-            // Programa la eliminación del aviso después de 2 segundos (en milisegundos)
             setTimeout(() => {
                 avisoTemporal.style.opacity = 0;
                 setTimeout(() => {
                     avisoTemporal.remove();
-                    // No almacenes información sobre el aviso en localStorage
                 }, 500);
 
-                // Muestra la fecha de publicación una vez que se ha ocultado el mensaje "¡Nuevo!"
                 const fechaPublicacion = obraElement.querySelector('.fecha-publicacion');
                 fechaPublicacion.classList.remove('hidden');
 
-                // Almacena un registro en el localStorage indicando que el aviso se mostró
                 localStorage.setItem(`avisoNuevoMostrado_${obra.id}`, "true");
-            }, 2000 );
+            }, 2000);
         } else if (avisoNuevoMostrado === "true") {
-            // Si el aviso ya se mostró, simplemente muestra la fecha de publicación
             const fechaPublicacion = obraElement.querySelector('.fecha-publicacion');
             fechaPublicacion.classList.remove('hidden');
         }
 
         obraElement.querySelector('.detailsButton').addEventListener('click', () => {
             const obraId = obra.id;
-            showDetails(obraId);
+            redirectToDetailsPage(obraId);
         });
 
         obrasContainer.appendChild(obraElement);
@@ -137,6 +133,7 @@ function renderObras() {
 
     renderPagination();
 }
+
 
 function resetAvisoById(obraId) {
     localStorage.removeItem(`avisoNuevoMostrado_${obraId}`);
@@ -325,9 +322,9 @@ function renderSearchResults(resultados) {
 
             // Manejador de eventos para el botón "Ver Detalles"
             obraElement.querySelector('.detailsButton').addEventListener('click', () => {
-                const obraId = obra.id;
-                redirectToDetailsPage(obraId);
-            });
+            const obraId = obra.id;
+            redirectToDetailsPage(obraId);
+        });
 
             obrasContainer.appendChild(obraElement);
         });
