@@ -211,10 +211,20 @@ function showDetails(obraId) {
 
           // Redirige a la página de detalles con el ID en la URL
          
+          redirectToDetailsPage(obraId);
     } else {
         detailTitle.textContent = 'Obra no encontrada';
     }
 }
+
+// Función para redirigir a la página de detalles
+function redirectToDetailsPage(obraId) {
+    if (obraId) {
+        // Redirige a la página de detalles con el ID en la URL
+        window.location.href = `detalles/detalle.html?id=${obraId}`;
+    }
+}
+
 
 
 
@@ -331,12 +341,7 @@ function renderSearchResults(resultados) {
     }
 }
 
-// Función para redirigir a la página de detalles
-function redirectToDetailsPage(obraId) {
-    if (obraId) {
-        window.location.href = `detalles/detalle.html?id=${obraId}`;
-    }
-}
+
 
 
 
