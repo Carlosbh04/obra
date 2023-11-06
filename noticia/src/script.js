@@ -324,8 +324,8 @@ function renderSearchResults(resultados) {
             }
 
             // Manejador de eventos para el botón "Ver Detalles"
-            obraElement.querySelector('.detailsButton').addEventListener('click', (event) => {
-                const obraId = event.currentTarget.getAttribute('data-id');
+            obraElement.querySelector('.detailsButton').addEventListener('click', () => {
+                const obraId = obra.id;
                 redirectToDetailsPage(obraId);
             });
 

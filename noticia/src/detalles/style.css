@@ -421,7 +421,7 @@ a:hover {
         text-align: center;
         transition: box-shadow 0.3s;
         width: auto;
-        height: 95vh;
+        height: auto;
         
     }
 
@@ -587,7 +587,7 @@ a:hover {
         text-align: center;
         transition: box-shadow 0.3s;
         width: auto;
-        height: 95vh;
+        height: auto;
         
     }
 
@@ -776,7 +776,7 @@ a:hover {
         text-align: center;
         transition: box-shadow 0.3s;
         width: auto;
-        height: auto;
+        height: 100vh;
         
     }
 
@@ -789,7 +789,7 @@ a:hover {
     }
     
     .obra-details p {
-        margin-bottom: 10px; /* Agregar margen inferior entre párrafos */
+       /* Agregar margen inferior entre párrafos */
     }
 
     h2 {
@@ -936,7 +936,6 @@ a:hover {
     }
    
 }
-
 
 
 /* Estilos para pantallas medianas-grandes (601px - 760px de ancho) */
