@@ -195,6 +195,7 @@ function showDetails(obraId) {
     // Borra el valor almacenado en el localStorage para que el campo de búsqueda esté vacío al volver atrás
     localStorage.removeItem('searchInputValue');
     // Busca la obra en el arreglo 'obrasData' por su 'id'
+    window.location.href = `detalles/detalle.html?id=${obraId}`;
     const obra = obrasData.find((item) => item.id == obraId);
 
     if (obra) {
@@ -212,7 +213,7 @@ function showDetails(obraId) {
         newsDetails.scrollIntoView({ behavior: 'smooth' });
 
           // Redirige a la página de detalles con el ID en la URL
-          window.location.href = `detalles/detalle.html?id=${obraId}`;
+         
     } else {
         detailTitle.textContent = 'Obra no encontrada';
     }

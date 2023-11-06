@@ -29,8 +29,6 @@ if (id !== null) {
                     Dimensiones: ${obra.dimensiones}<br>
                     
                 `;
-                console.log('ID:', id);
-console.log('Obra:', obra);
 
                 
             }
