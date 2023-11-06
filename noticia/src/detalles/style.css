@@ -251,7 +251,7 @@ a:hover {
         text-align: center;
         transition: box-shadow 0.3s;
         width: auto;
-        height: 98vh;
+        height: 100vh;
     }
 
     .obra-details:hover {
@@ -787,9 +787,9 @@ a:hover {
         margin-bottom: 0; /* Agregar margen inferior entre el título y la imagen */
     }
     
-    /* .obra-details p {
-       /* Agregar margen inferior entre párrafos */
- 
+    .obra-details p {
+      margin-bottom: 10px; /* Agregar margen inferior entre párrafos */
+    }
 
     h2 {
         font-size: 1.8rem;
@@ -969,7 +969,7 @@ a:hover {
         text-align: center;
         transition: box-shadow 0.3s;
         width: 70%;
-        height: auto;
+        height:auto;
         border-radius: 2rem;
         justify-content: center;
         align-items: center;
